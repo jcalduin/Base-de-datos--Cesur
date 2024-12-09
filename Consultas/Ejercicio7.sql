@@ -80,7 +80,12 @@ where duracion < (select duracion
 				  from peliculas 
 				  where duracion < (select max(duracion) from peliculas where duracion < (select max(duracion) from peliculas))
 				  order by duracion desc
-				  limit 1)
+				  limit 1);
+                  
+select nombre
+from peliculas
+order by duracion desc
+limit 3, 10;                   
 
 Ejercicio 6.- Obtén el nombre de las películas que contengan más de un letra "a" en su nombre y no hayan sido protagonizadas 
 por el actor con sexo masculino y el máximo id.
