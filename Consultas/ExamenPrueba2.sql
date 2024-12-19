@@ -69,7 +69,7 @@ Muestra los resultados en columnas llamadas NOM_ACTOR y SUELDO_ACTOR, ordenados 
 select nombre as NOM_ACTOR, sueldo as SUELDO_ACTOR
 from actores
 where sueldo/2 > (select sueldo
-				  from actores
+		  from actores
                   where nombre like "noa")
 order by sueldo desc;
 
@@ -88,9 +88,9 @@ Ordena los resultados por la nota de la pelicula, de mayor a menor.
 select * 
 from peliculas
 where nombre_peli like "%o%o%" and duracion < (select duracion
-											   from peliculas
+					       from peliculas
                                                where nombre_peli like "animales nocturnos") and nota_peli > (select p.nota_peli
-																											 from peliculas as p inner join actores as a on a.id_actor=p.actor
+													     from peliculas as p inner join actores as a on a.id_actor=p.actor
                                                                                                              where a.nombre like "carlos")
 order by nota_peli desc;
                                                                                                              
