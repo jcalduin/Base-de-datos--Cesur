@@ -62,7 +62,7 @@ o que hayan nacido en la primera quincena de uno de los primeros 6 meses del añ
 
 select a.id_actor, avg(p.nota)
 from actores as a inner join peliculas as p on a.id_actor=p.actor
-where a.id_actor = p.actor and (a.sueldo > 99999 or (a.fecha_nac = (select month(a.fecha_nac) 
+where a.id_actor = p.actor and (a.sueldo > 999999 or (a.fecha_nac = (select month(a.fecha_nac) 
 																    from actores as a inner join peliculas as p on a.id_actor=p.actor
 																    where month(a.fecha_nac) < 7 and day(a.fecha_nac) < 16)))
 group by a.id_actor
