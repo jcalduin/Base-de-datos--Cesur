@@ -66,8 +66,8 @@ add media decimal(2,1) constraint chk_media check(media <= 9.9);
 
 Ejercicio 6.- Modifica la columna “Media” para que acepte valores con 2 decimales, tenga el valor 0,0 por defecto y no pueda ser NULL.
 
-ALTER TABLE alumno  /*Este meda error revisar en clase*/
-MODIFY media DECIMAL(3,2) constraint chk_media(media <= 9.99) default 0.00 not null;
+ALTER TABLE alumno 
+MODIFY media DECIMAL(3,2) default 0.00;
 
 Ejercicio 7.- Elimina la restricción de clave foránea de la columna Grado de la tabla ALUMNO.
 
